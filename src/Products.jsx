@@ -1,15 +1,13 @@
-import {Link} from "react-router-dom"
+
+import Navbar from "./Navbar"
+
 
 export default function Products(){
     return(
         <>
+            <Navbar />
             <div>Products go here</div>
-            <Link to="/cart">
-                Go to cart
-            </Link>
-            <Link to="/">
-                Go home
-            </Link>
+           
         </>
     )
 }
