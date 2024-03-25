@@ -10,7 +10,7 @@ export default function Navbar(){
         <div className="navbar">
             <div className="left">
                 <Link to="/" style={{textDecoration: 'none', color: 'black'}}>
-                    <h2 className="atlheader">AtlMoon</h2>
+                    <h2 className="atlheader">AtlanticMoon</h2>
                 </Link>
             </div>
             <div className="right">
