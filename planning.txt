@@ -4,3 +4,6 @@ First steps to take today are get 3 pages set up - home, products, cart
 
 Also would like to try and make some item cards and mess around w FakeStoreAPI
 
+NEXT steps
+
+
