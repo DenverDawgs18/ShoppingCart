@@ -16,6 +16,7 @@ useEffect(() => {
             <img src={obj.image} alt="ima" className="cardImage" />
             <div className="bottom">
                 <h3>{obj.title}</h3>
+                <label htmlFor="quantity">Quantity:</label>
                 <input type="number" name="quantity" id="quantity" defaultValue={1} />
                 <button type="submit" className="add">Add to cart</button>
             </div>
