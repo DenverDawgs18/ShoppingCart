@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  
 
 
 
@@ -12,12 +12,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root{
+  height: 100%;
+}
+html, body{
+  height: 100%;
+  overflow-y: hidden;
+}
 
 .navbar{
   display: flex;
   background-color: lightgray;
   padding: 50px;
   box-shadow: 2px 2px 5px;
+  
 }
 .right{
   margin-left: auto;
@@ -75,4 +83,46 @@
 }
 .none{
   margin-top: 40vh;
+}
+.homepage{
+  background-image: url('./imgs/pexels-francesco-ungaro-998641.jpg');
+  object-fit: contain;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.switch{
+  background-color: white;
+  color: black;
+  padding: 40px;
+  border-radius: 8px;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  font-size: larger;
+  box-shadow: 8px 8px 5px gray;
+  border-style: none;
+
+}
+.switch:hover{
+  animation: 1s button-switch 1 forwards;
+}
+.take{
+  color: white;
+  font-size: 50px;
+}
+@keyframes button-switch{
+  from{
+    background-color: white;
+    color: black;
+  }
+  to{
+    background-color: black;
+    color: white;
+  }
 }
