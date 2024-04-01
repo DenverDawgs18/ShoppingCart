@@ -24,7 +24,7 @@ useEffect(() => {
                 <h4>${obj.price}</h4>
                 <form onSubmit={(e) => addToCart(e, obj, quan)} className="quanos">
                     <label htmlFor="quantity">Quantity:</label>
-                    <input type="number" name="quantity" id="quantity" defaultValue={1} onChange={(e) => handleQuanChange(e)}/>
+                    <input type="number" name="quantity" id="quantity"  value={quan}  onChange={(e) => handleQuanChange(e)}/>
                     <button type="submit" className="add">Add to cart</button>
                 </form>
             </div>

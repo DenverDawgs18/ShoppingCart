@@ -7,25 +7,80 @@ import { createContext, useState } from "react";
 export const ShopContext = createContext({
     cartItems: [],
     addToCart: () => {},
-    
+    changeQuantity: () => {},
+    removeFromCart: () => {},
+    totalCost: 0,
 })
 export  function Router(){
     const [cartItems, setCartItems] = useState([])
+
     function addToCart(e, obj, quan){
-        quan = Number(quan);
         e.preventDefault()
-        let newObj = {
-            ...obj,
-            quantity: quan
+        let check = true;
+        for(let i = 0; i < cartItems.length; i++){
+            if(cartItems[i].id === obj.id){
+                alert('Already added to cart')
+                check = false;
+            }
         }
-        console.log(newObj)
-        setCartItems(
-            [
-                ...cartItems,
-                newObj
-            ]
-        )
+        if(check){
+            quan = Number(quan);
+            
+            let newObj = {
+                ...obj,
+                quantity: quan
+            }
+            console.log(newObj)
+            setCartItems(
+                [
+                    ...cartItems,
+                    newObj
+                ]
+            )
+        }
     }
+    function changeQuantity(item, sign){
+        let currentQuan = item.quantity;
+        if(sign === 'plus'){
+            setCartItems(
+                cartItems.map(it => {
+                    if(it !== item){
+                        return it;
+                    }
+                    else{
+                        return{
+                            ...it,
+                            quantity: currentQuan + 1
+                        }
+                    }
+                })
+            )
+        }
+        else if(currentQuan - 1 === 0){
+            removeFromCart(item)
+        } 
+        else{
+            setCartItems(
+                cartItems.map(it => {
+                    if(it !== item){
+                        return it;
+                    }
+                    else{
+                        return{
+                            ...it,
+                            quantity: currentQuan - 1
+                        }
+                    }
+                })
+            )
+        }
+    }
+    function removeFromCart(item){
+        setCartItems(
+            cartItems.filter(it => 
+                it.id !== item.id)
+        )
+}
     const router = createBrowserRouter([
         {
             path: "/",
@@ -44,7 +99,7 @@ export  function Router(){
 
     return (
 
-    <ShopContext.Provider value={{cartItems, addToCart}}>
+    <ShopContext.Provider value={{cartItems, addToCart, changeQuantity, removeFromCart}}>
         <RouterProvider router={router} />
     </ShopContext.Provider>
     )

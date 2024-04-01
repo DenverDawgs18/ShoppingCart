@@ -7,3 +7,11 @@ Also would like to try and make some item cards and mess around w FakeStoreAPI
 NEXT steps
 
 
+handle remove from cart
+being able to change quantity on cart
+
+some styling to cart
+
+being able to change quantity
+
+testing
