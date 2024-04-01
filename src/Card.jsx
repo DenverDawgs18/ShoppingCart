@@ -18,9 +18,12 @@ useEffect(() => {
     }
     return(
         obj && ( <div className="card">
-            <img src={obj.image} alt="ima" className="cardImage" />
+            <div className="top">
+                <img src={obj.image} alt="ima" className="cardImage" />
+            </div>
+
             <div className="bottom">
-                <h3>{obj.title}</h3>
+                <h3>{obj.title.length > 25 ? obj.title.slice(0, 24) + '...' : obj.title}</h3>
                 <h4>${obj.price}</h4>
                 <form onSubmit={(e) => addToCart(e, obj, quan)} className="quanos">
                     <label htmlFor="quantity">Quantity:</label>
