@@ -10,9 +10,21 @@ export const ShopContext = createContext({
     
 })
 export  function Router(){
-    const [cartItems, setCartItems] = useState([1, 2, 3])
-    function addToCart(){
-       
+    const [cartItems, setCartItems] = useState([])
+    function addToCart(e, obj, quan){
+        quan = Number(quan);
+        e.preventDefault()
+        let newObj = {
+            ...obj,
+            quantity: quan
+        }
+        console.log(newObj)
+        setCartItems(
+            [
+                ...cartItems,
+                newObj
+            ]
+        )
     }
     const router = createBrowserRouter([
         {

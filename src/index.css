@@ -37,12 +37,15 @@
   width: 100px;
   height: 100px;
 }
-.cards{
+.cards,.cartCards{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) ;
   gap: 20px;
 }
-.bottom{
+.cartCards{
+  width: 50%;
+}
+.bottom, .quanos{
   display: flex;
   flex-direction: column;
   align-items: center;
