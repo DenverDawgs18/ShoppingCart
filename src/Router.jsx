@@ -2,18 +2,32 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import App from "./App";
 import Cart from "./Cart";
 import Products from "./Products";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ShopContext = createContext({
     cartItems: [],
     addToCart: () => {},
     changeQuantity: () => {},
     removeFromCart: () => {},
-    totalCost: 0,
+    total: 0,
 })
 export  function Router(){
     const [cartItems, setCartItems] = useState([])
-
+    const [total, setTotal] = useState(0)
+    useEffect(() => {
+        let tot = 0;
+        for(let i = 0; i < cartItems.length; i++){
+            tot = tot + cartItems[i].price * cartItems[i].quantity
+            
+        }
+        tot = money_round(tot)
+        console.log(tot)
+        setTotal(tot)
+    }, [cartItems])
+    // taken from Stack OverFlow https://stackoverflow.com/questions/14968615/rounding-to-the-nearest-hundredth-of-a-decimal-in-javascript
+    function money_round(num) {
+        return Math.ceil(num * 100) / 100;
+    }
     function addToCart(e, obj, quan){
         e.preventDefault()
         let check = true;
@@ -30,7 +44,7 @@ export  function Router(){
                 ...obj,
                 quantity: quan
             }
-            console.log(newObj)
+            
             setCartItems(
                 [
                     ...cartItems,
@@ -39,6 +53,7 @@ export  function Router(){
             )
         }
     }
+    
     function changeQuantity(item, sign){
         let currentQuan = item.quantity;
         if(sign === 'plus'){
@@ -99,7 +114,7 @@ export  function Router(){
 
     return (
 
-    <ShopContext.Provider value={{cartItems, addToCart, changeQuantity, removeFromCart}}>
+    <ShopContext.Provider value={{cartItems, addToCart, changeQuantity, removeFromCart, total}}>
         <RouterProvider router={router} />
     </ShopContext.Provider>
     )

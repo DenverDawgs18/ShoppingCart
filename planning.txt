@@ -15,3 +15,14 @@ some styling to cart
 being able to change quantity
 
 testing
+
+Styling:
+
+Change from cards to list on cart page
+Add fake button "Continue to checkout" 
+Add image to homepage - something spacey with generic fashion store text over it 
+Maybe something like 'Take your style beyond our planet'
+AtlanticMoon
+Gray theming throughout
+Make product cards look better
+Change background on header to something with moon craters involved
