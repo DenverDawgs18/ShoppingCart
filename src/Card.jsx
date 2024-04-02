@@ -1,5 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { ShopContext } from "./Router";
+import Icon from "@mdi/react";
+import { mdiMinusCircle, mdiPlusBox } from "@mdi/js";
 
 export default function Card({id}){
     const [obj, setObj] = useState(null)
@@ -14,7 +16,25 @@ useEffect(() => {
 })
     const {addToCart} = useContext(ShopContext)
     function handleQuanChange(e){
-        setQuan(e.target.value)
+        if(e.target.value === ""){
+            setQuan(e.target.value)
+        }
+        else{
+            setQuan(Number(e.target.value))
+        }
+        
+        
+        
+        
+    }
+    function addQuan(){
+        setQuan(quan + 1)
+    }
+    function subtractQuan(){
+        
+        setQuan(quan - 1)
+        
+        
     }
     return(
         obj && ( <div className="card">
@@ -27,7 +47,13 @@ useEffect(() => {
                 <h4>${obj.price}</h4>
                 <form onSubmit={(e) => addToCart(e, obj, quan)} className="quanos">
                     <label htmlFor="quantity">Quantity:</label>
-                    <input type="number" name="quantity" id="quantity"  value={quan}  onChange={(e) => handleQuanChange(e)}/>
+                    <div className="quant">
+                        <Icon path={mdiMinusCircle} size={1} onClick={subtractQuan} />
+                        <input type="number" name="quantity" id="quantity" min="1"
+                        value={quan}  onChange={(e) => handleQuanChange(e)}/>
+                        <Icon path={mdiPlusBox} size={1} onClick={addQuan}/>
+                    </div>
+                    
                     <button type="submit" className="add">Add to cart</button>
                 </form>
             </div>

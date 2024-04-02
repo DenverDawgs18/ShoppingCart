@@ -101,9 +101,7 @@ html, body{
   justify-content: center;
   align-items: center;
 }
-.none{
-  margin-top: 40vh;
-}
+
 .homepage{
   background-image: url('./imgs/pexels-francesco-ungaro-998641.jpg');
   background-size: cover;
@@ -162,4 +160,13 @@ html, body{
   position: absolute;
   right: -5px;
   top: -10px;
+}
+#quantity{
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.quant{
+  display: flex;
+  gap: 5px;
+
 }
