@@ -25,8 +25,9 @@ export default function Cart(){
                                     <h3>{item.title}</h3>
                                     <button onClick={() => removeFromCart(item)} className="remove">X</button>
                                 </div>
-                                
-                                <h4>${item.price * item.quantity}</h4>
+                                <h4>{item.quantity > 1 ? '$' + item.quantity * item.price + 
+                                "  ($" + item.price + ' per)' : '$' + item.price}</h4>
+                
                                 <div className="quant">
                                     <Icon path={mdiMinusCircle} size={1} onClick={() => changeQuantity(item, 'minus')} />
                                     <h4>Quantity: {item.quantity}</h4>
@@ -37,8 +38,9 @@ export default function Cart(){
                     ))}
                 </div>
                 <div className="cartRight">
-                    <h1>{total ? 'Total: ' + total 
+                    <h1>{total ? 'Total: $' + total 
                     : ''}</h1>
+                    <button className="proceed">Proceed to checkout</button>
                 </div>
             </div>
         </>

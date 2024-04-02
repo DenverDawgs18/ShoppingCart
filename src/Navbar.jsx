@@ -11,8 +11,8 @@ export default function Navbar(){
     return(
         <div className="navbar">
             <div className="left">
-                <Link to="/" style={{textDecoration: 'none', color: 'black'}}>
-                    <h2 className="atlheader">AtlanticMoon</h2>
+                <Link to="/" style={{textDecoration: 'none', color: 'black'}} className="atlheader">
+                    <h2 >AtlanticMoon</h2>
                 </Link>
             </div>
             <div className="right">
