@@ -40,7 +40,8 @@ export default function Cart(){
                 <div className="cartRight">
                     <h1>{total ? 'Total: $' + total 
                     : ''}</h1>
-                    <button className="proceed">Proceed to checkout</button>
+                    <button className="proceed">PROCEED TO CHECKOUT</button>
+                    <Link to="/products" style={{textDecoration: 'none', color: 'black'}}><h3 className="addp">ADD PRODUCTS</h3></Link>
                 </div>
             </div>
         </>
@@ -52,7 +53,7 @@ export default function Cart(){
             <Navbar />
             <div className="none">
                 
-                <Link to="/products" style={{textDecoration: 'none', color: 'black'}}><h3 className="addp">Add products!</h3></Link>
+                <Link to="/products" style={{textDecoration: 'none', color: 'black'}}><h3 className="addp">ADD PRODUCTS</h3></Link>
             </div>
             
 

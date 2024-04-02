@@ -92,8 +92,12 @@ html, body{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
+.addp:hover{
+  animation: 1s proceed_switch 1 forwards;
+}
 .homepage{
   background-image: url('./imgs/pexels-francesco-ungaro-998641.jpg');
   background-size: cover;
@@ -228,7 +232,7 @@ html, body{
   padding-right: 20px;
  
 }
-.proceed{
+.proceed,.addp{
   padding: 20px;
   border-radius: 20px;
   background-color: black;
@@ -236,6 +240,8 @@ html, body{
   font-size: larger;
   box-shadow: 3px 3px 5px gray;
   border: 2px solid black;
+  letter-spacing: 5px;
+  font-weight: normal;
 }
 .proceed:hover{
   animation: proceed_switch 0.5s 1 forwards;
@@ -259,6 +265,7 @@ html, body{
 .navbar{
   padding-left: 10px;
 }
+
 @keyframes proceed_switch{
   from{
     background-color: black;
@@ -294,10 +301,11 @@ html, body{
   }
   .cartRight{
     padding-bottom: 50px;
+    margin-left: 9px;
     max-width: 300px;
     align-self: stretch;
   }
   .your{
-    margin-top: 10vh;
+    margin-top: 180px;
   }
 }
