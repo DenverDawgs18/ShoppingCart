@@ -2,6 +2,8 @@ import Navbar from "./Navbar"
 import {ShopContext}  from "./Router"
 import {useContext} from 'react';
 import { Link } from "react-router-dom";
+import Icon from "@mdi/react";
+import {mdiMinusCircle, mdiPlusBox} from "@mdi/js"
 export default function Cart(){
     const {cartItems, removeFromCart, changeQuantity, total} = useContext(ShopContext)
     
@@ -14,25 +16,29 @@ export default function Cart(){
            <div className="cart">
                 <div className="cartCards">
 
-                
+                    <h1 className="your">Your cart</h1>
                     {cartItems.map(item => (
-                        <div className="card cartCard" key={item.id}>
-                            <img src={item.image} alt="ima" className="cardImage" />
-                            <button onClick={() => removeFromCart(item)}>X</button>
-                            <div className="bottom">
-                                <h3>{item.title}</h3>
-                                <h4>${item.price}</h4>
-                                <h4>Quantity: {item.quantity}</h4>
-                                <button onClick={() => changeQuantity(item, 'plus')}>Add q</button>
-                                <button onClick={() => changeQuantity(item, 'minus')}>Remove q</button>
-
+                        <div className="cartCard" key={item.id}>
+                            <img src={item.image} alt="ima" className="cardImage cartImage" />       
+                            <div className="cartCardRight">
+                                <div className="oneLine">
+                                    <h3>{item.title}</h3>
+                                    <button onClick={() => removeFromCart(item)} className="remove">X</button>
+                                </div>
+                                
+                                <h4>${item.price * item.quantity}</h4>
+                                <div className="quant">
+                                    <Icon path={mdiMinusCircle} size={1} onClick={() => changeQuantity(item, 'minus')} />
+                                    <h4>Quantity: {item.quantity}</h4>
+                                    <Icon path={mdiPlusBox} size={1} onClick={() => changeQuantity(item, 'plus')}/>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="cartRight">
-                    <h4>{total ? 'Total: ' + total 
-                    : ''}</h4>
+                    <h1>{total ? 'Total: ' + total 
+                    : ''}</h1>
                 </div>
             </div>
         </>

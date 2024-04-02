@@ -51,7 +51,7 @@ html, body{
   padding: 50px;
 }
 
-.cards,.cartCards{
+.cards{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) ;
   gap: 20px;
@@ -85,17 +85,17 @@ html, body{
 }
 .cart{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
-  margin-top: 5vh;
+  
+  justify-content: center;
+  padding: 50px;
+  
 }
 .card{
   background-color: white;
 }
-.cartRight{
-  background-color: white;
-  box-shadow: 2px 2px 5px;
-}
+
 .none{
   display: flex;
   justify-content: center;
@@ -169,4 +169,58 @@ html, body{
   display: flex;
   gap: 5px;
 
+}
+.cartCard{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-height: 10vh;
+  position: relative;
+  margin-right: 70px;
+}
+.cartCards{
+  display: grid;
+  gap: 50px;
+  padding: 20px;
+  
+  overflow-y: auto;
+  align-content: start;
+  box-shadow: 2px 2px 5px;
+  justify-content: center;
+  
+
+}
+.your{
+  margin-right: 140px;
+}
+.cartCardRight{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.oneLine{
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+.remove{
+  
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: larger;
+  background-color: white;
+  color: red;
+ 
+  
+  
+}
+.cartImage{
+  justify-self: end;
+}
+.cartRight{
+  box-shadow: 2px 2px 5px;
 }
