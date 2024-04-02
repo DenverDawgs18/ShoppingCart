@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[` component > renders against snapshot 1`] = `undefined`;
+
+exports[`App component > renders 1`] = `undefined`;
+
+exports[`App component > renders against snapshot 1`] = `undefined`;
+
+exports[`Card component > renders against snapshot 1`] = `undefined`;
+
+exports[`Cart component > renders against snapshot 1`] = `undefined`;
+
+exports[`Cart component > renders against snapshot 2`] = `undefined`;
